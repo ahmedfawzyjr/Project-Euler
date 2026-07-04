@@ -1,25 +1,27 @@
 # 🧮 Project Euler — Solutions Archive
 
-> A fully organized archive of solutions to [Project Euler](https://projecteuler.net) problems, with individual problem descriptions and verified numerical answers, spanning **1,000 problems** in total.
+A structured, fully automated archive containing problem descriptions and verified solutions for **1,000 Project Euler problems**. 
 
 ---
 
-## 📌 What is Project Euler?
+## 📌 Project Overview
 
-[Project Euler](https://projecteuler.net) is a series of challenging mathematical and computer programming problems. Each problem requires a unique combination of mathematical insight and programming skill to solve. Problems range in difficulty from **5%** (beginner) to **100%** (expert).
+[Project Euler](https://projecteuler.net) is a series of challenging mathematical/computer programming problems designed for people interested in exploring mathematics and coding. 
+
+This repository serves as a personal archive of solved problems, automatically partitioned into individual directories to ensure clean categorization and easy navigation.
 
 ---
 
-## 🗂️ Folder Structure
+## 🗂️ Repository Structure
 
-Every problem lives in its own self-contained folder:
+Every problem is structured inside its own dedicated directory:
 
-```
+```text
 Project Euler/
 │
 ├── 📁 Problem 001 - Multiples of 3 and 5/
-│   ├── 📄 problem.md        ← Full problem description + link
-│   └── 📄 solution.md       ← Verified numerical answer
+│   ├── 📄 problem.md        # Full description & link to official site
+│   └── 📄 solution.md       # Verified numerical answer
 │
 ├── 📁 Problem 002 - Even Fibonacci numbers/
 │   ├── 📄 problem.md
@@ -29,47 +31,43 @@ Project Euler/
 │   ├── 📄 problem.md
 │   └── 📄 solution.md
 │
-│   ... (994 named problems) ...
+│   ... (Problems 004 to 994) ...
 │
-├── 📁 Problem 995/           ← Unnamed (not yet published)
+├── 📁 Problem 995/           # Unnamed placeholder (not yet published)
 │   ├── 📄 problem.md
 │   └── 📄 solution.md
 │
-│   ... up to Problem 1000 ...
+│   ... (up to Problem 1000) ...
 │
-└── 📄 Solutions.md           ← Original master list of all 1000 answers
+└── 📄 Solutions.md           # Master list of all 1,000 answers
 ```
 
-### Folder Naming Rules
-
-| Format | Meaning |
-|--------|---------|
-| `Problem NNN - Title` | Named problem — title sourced from official archive |
-| `Problem NNN` | Unnamed problem — not yet published on Project Euler |
+### 🏷️ Folder Naming Conventions
+* **`Problem <ID> - <Title>`**: Sourced from official archives (available for problems 1 to 994).
+* **`Problem <ID>`**: Retained for unpublished or unnamed problems (problems 995 to 1000).
 
 ---
 
-## 📄 Inside Each File
+## 📄 File Templates
 
-### `problem.md` — Problem Description
+Each problem folder contains two main files:
 
+### 1. `problem.md` (Problem Description)
+Includes the formatted problem statement along with a reference link to the official problem.
 ```markdown
 # Problem 001 - Multiples of 3 and 5
 
 ## Description
-
-If we list all the natural numbers below 10 that are multiples of
-3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
+If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
 
 Find the sum of all the multiples of 3 or 5 below 1000.
 
 ---
-
 [Link to problem on Project Euler](https://projecteuler.net/problem=1)
 ```
 
-### `solution.md` — Verified Answer
-
+### 2. `solution.md` (Numerical Answer)
+Contains the verified final solution.
 ```markdown
 # Problem 1 Solution
 
@@ -82,47 +80,28 @@ The solution to Project Euler Problem 1 is:
 
 ## 📊 Archive Statistics
 
-| Category | Count |
-|----------|-------|
-| ✅ Total problems with solutions | **1,000** |
-| 📝 Problems with full descriptions | **918** |
-| 🏷️ Problems with official titles | **994** |
-| ❓ Unnamed / unpublished problems | **6** |
-| 🆕 Latest named problem | **Problem 994 — Counting Triangles** |
+| Metric | Details |
+| :--- | :--- |
+| **Total Solutions** | `1,000` (parsed from `Solutions.md`) |
+| **Fully Documented Descriptions** | `918` (problems 1–918) |
+| **Official Titles Named** | `994` (problems 1–994) |
+| **Placeholders (Unreleased)** | `6` (problems 995–1000) |
+| **Latest Published Problem** | *Problem 994: Counting Triangles* |
 
 ---
 
-## 🔍 Quick Reference
-
-| Problem ID | Title | Category |
-|------------|-------|----------|
-| 001 | Multiples of 3 and 5 | Arithmetic |
-| 002 | Even Fibonacci Numbers | Sequences |
-| 003 | Largest Prime Factor | Number Theory |
-| 004 | Largest Palindrome Product | Combinatorics |
-| 005 | Smallest Multiple | Number Theory |
-| 006 | Sum Square Difference | Arithmetic |
-| 007 | 10001st Prime | Primes |
-| 008 | Largest Product in a Series | Sequences |
-| 009 | Special Pythagorean Triplet | Geometry |
-| 010 | Summation of Primes | Primes |
-| ... | *(see individual problem folders)* | ... |
+## 🛠️ Extraction Details
+To bypass Project Euler's strict rate limits (which cause immediate `403 Forbidden` / `502 Bad Gateway` blocks on scrapers), the repository structure was built using a multi-step extraction method:
+* **Solutions** parsed directly from the local master file `Solutions.md`.
+* **Descriptions** for problems 1–918 pulled from the community Hugging Face dataset `alexandonian/project-euler`.
+* **Titles** for problems 919–994 scraped programmatically using automated browser sessions.
 
 ---
 
-## 🛠️ Tools Used
-
-- **Python 3.12** — Scripts for parsing, generating, and renaming all 1000 folders.
-- **Hugging Face Dataset** (`alexandonian/project-euler`) — Provided descriptions for Problems 1–918.
-- **Community JSON Archive** (`jfblomgren/project-euler-data`) — Problem titles for Problems 1–330.
-- **Browser Automation** — Scraped problem titles from the official Project Euler archives for problems 919–994.
-
----
-
-> ⚠️ **Disclaimer**: The answers stored here are for personal study and reference only. Project Euler encourages solvers to first attempt each problem independently. Please respect the community guidelines at [projecteuler.net/about](https://projecteuler.net/about).
+> ⚠️ **Disclaimer**: The answers stored in this archive are for educational purposes and personal reference. To get the most out of Project Euler, try to solve each problem on your own before consulting the solutions.
 
 ---
 
 ## ✍️ Signature
 
-Created and maintained with ❤️ by **[Ahmed Fawzy](https://github.com/ahmedfawzyjr)**.
+Created and maintained by **[Ahmed Fawzy](https://github.com/ahmedfawzyjr)**.
