@@ -44,51 +44,8 @@ Project Euler/
 
 | Format | Meaning |
 |--------|---------|
-| `Problem 001 - Multiples of 3 and 5` | Named problem — title sourced from official archive |
-| `Problem 995` | Unnamed problem — not yet published on Project Euler |
-
----
-
-## 🔗 Relationship Diagram
-
-The diagram below illustrates how all components in this archive relate to each other:
-
-```mermaid
-graph TD
-    classDef source fill:#e8d5fb,stroke:#7c3aed,color:#1e1b4b,font-weight:bold
-    classDef process fill:#dbeafe,stroke:#2563eb,color:#1e3a8a,font-weight:bold
-    classDef output fill:#dcfce7,stroke:#16a34a,color:#14532d,font-weight:bold
-    classDef file fill:#fef9c3,stroke:#ca8a04,color:#713f12
-    classDef link fill:#fee2e2,stroke:#dc2626,color:#7f1d1d
-
-    %% Data Sources
-    SRC1["📄 Solutions.md\nMaster list of 1000 answers"]:::source
-    SRC2["🌐 Community Archives\nHugging Face, GitHub datasets"]:::source
-    SRC3["🌐 Project Euler Website\nOfficial problem titles"]:::source
-
-    %% Processing
-    PROC["⚙️ Automated Scripts\nextract_problems.py\nenhance_problems.py\nrename_all.py"]:::process
-
-    %% Root Directory
-    ROOT["📁 Project Euler Root"]:::output
-
-    %% Individual Problem Folder
-    subgraph FOLDER["📁 Problem NNN - Title  (×1000 folders)"]
-        PF["📄 problem.md\nDescription + Official Link"]:::file
-        SF["📄 solution.md\nVerified Answer"]:::file
-    end
-
-    %% Euler Website
-    WEB["🌐 projecteuler.net/problem=NNN"]:::link
-
-    %% Flow
-    SRC1 -->|parse answer + ID| PROC
-    SRC2 -->|fetch title + description| PROC
-    SRC3 -->|scrape titles| PROC
-    PROC -->|generate| ROOT
-    ROOT --> FOLDER
-    PF <-.->|links to| WEB
-```
+| `Problem NNN - Title` | Named problem — title sourced from official archive |
+| `Problem NNN` | Unnamed problem — not yet published on Project Euler |
 
 ---
 
@@ -163,3 +120,9 @@ The solution to Project Euler Problem 1 is:
 ---
 
 > ⚠️ **Disclaimer**: The answers stored here are for personal study and reference only. Project Euler encourages solvers to first attempt each problem independently. Please respect the community guidelines at [projecteuler.net/about](https://projecteuler.net/about).
+
+---
+
+## ✍️ Signature
+
+Created and maintained with ❤️ by **[Ahmed Fawzy](https://github.com/ahmedfawzyjr)**.
