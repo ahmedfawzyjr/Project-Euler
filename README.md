@@ -1,6 +1,6 @@
 # 🧮 Project Euler — Solutions Archive
 
-A structured, fully automated archive containing problem descriptions and verified solutions for **1,000 Project Euler problems**. 
+A structured, fully automated archive containing problem descriptions and verified solutions for **994 Project Euler problems**. 
 
 ---
 
